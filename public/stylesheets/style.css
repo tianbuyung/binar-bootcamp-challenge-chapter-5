@@ -1,5 +1,5 @@
 .first-page {
-  background-image: url(../images/main-bg.jpg);
+  background-image: url(../images/home/main-bg.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -13,7 +13,7 @@
 }
 
 .second-page {
-  background-image: url(../images/the-games-bg.jpg);
+  background-image: url(../images/home/the-games-bg.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -32,11 +32,11 @@
 }
 
 .carousel-control-next-icon {
-  background-image: url(../images/switch-right.svg);
+  background-image: url(../images/home/switch-right.svg);
 }
 
 .carousel-control-prev-icon {
-  background-image: url(../images/switch-left.svg);
+  background-image: url(../images/home/switch-left.svg);
 }
 
 @media screen and (min-width: 576px) {
@@ -66,7 +66,7 @@
 }
 
 .third-page {
-  background-image: url(../images/features.jpg);
+  background-image: url(../images/home/features.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -146,7 +146,7 @@
 }
 
 .fourth-page {
-  background-image: url(../images/requirements.png);
+  background-image: url(../images/home/requirements.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -161,7 +161,7 @@
       rgba(0, 0, 0, 0) 51.1%,
       #080a0b 99.74%
     ),
-    url(../images/top-score-bg.png);
+    url(../images/home/top-score-bg.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -179,7 +179,7 @@
 }
 
 .sixth-page {
-  background-image: url(../images/newsletter.png);
+  background-image: url(../images/home/newsletter.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
