@@ -27,7 +27,7 @@ app.use("/", indexRouter);
 app.use("/game", gameRouter);
 app.use("/users", usersRouter);
 
-app.use(clientError.client);
+app.use(clientError.errorNotFound);
 app.use(serverError.server);
 
 require("dotenv").config();
