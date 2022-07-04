@@ -38,7 +38,7 @@ This project is built to implement Node JS, http server, express, and restful AP
 
 - Open this link on your browser <http://localhost:3000>
 - You can try sign up and sign in to the game
-- You can try restful API for this app on <http://localhost:3000/users-api> via [postman](https://www.postman.com/), for example: [Challenge-Chapter-5 Postman Collection](/challenge-chapter-5.postman_collection.json)
+- You can try restful API for this app on <http://localhost:3000/api-users> via [postman](https://www.postman.com/), for example: [Challenge-Chapter-5 Postman Collection](/challenge-chapter-5.postman_collection.json)
 
 ## Authors
 
