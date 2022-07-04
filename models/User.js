@@ -67,19 +67,21 @@ class User {
     );
     return dataFiltered;
   }
-  editDataUserById(id, data) {
+  editDataUserById(id, payload) {
     let datas = this.#getUsers();
     const db = this.#getDb();
-    let { email, password } = data;
-    datas.filter((data) => {
-      if (data.id == id) {
-        data.email = email;
-        data.password = password;
-      }
-    });
-    this.fs.writeFile(db, JSON.stringify(datas), (err) => {
-      if (err) return err;
-    });
+    let { email, password } = payload;
+    let dataFiltered = datas.filter(
+      (data) => data.id == id && data.status == true
+    );
+    if (dataFiltered.length > 0) {
+      dataFiltered[0].email = email;
+      dataFiltered[0].password = password;
+      this.fs.writeFile(db, JSON.stringify(datas), (err) => {
+        if (err) return err;
+      });
+      return dataFiltered;
+    }
   }
   deleteDataUserById(id) {
     let datas = this.#getUsers();

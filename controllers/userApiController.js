@@ -30,14 +30,12 @@ class UserApiController {
   }
   editUserById(req, res) {
     let id = req.params.id;
-    let data = req.body;
-    // console.log(id, data);
-    let user = userModel.editDataUserById(id, data);
-    // console.log(user);
-    if (!user) {
+    let payload = req.body;
+    let user = userModel.editDataUserById(id, payload);
+    if (user) {
       res.json({
         message: `edited user by id ${id}`,
-        data,
+        payload,
       });
     } else {
       res.json({
@@ -54,7 +52,7 @@ class UserApiController {
       });
     } else {
       res.json({
-        error: response,
+        error: user,
       });
     }
   }

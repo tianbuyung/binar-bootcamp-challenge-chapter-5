@@ -1,9 +1,1 @@
-[
-  {
-    "id": 1,
-    "email": "inisaya@email.com",
-    "password": "Inisaya",
-    "status": false
-  },
-  { "id": 2, "email": "kapan@email.com", "password": "Inisaya", "status": true }
-]
+[]
