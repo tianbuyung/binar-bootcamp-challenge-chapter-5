@@ -1,0 +1,36 @@
+{
+  "name": "challenge-chapter-5",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/binar-bootcamp-fsw23/challenge-chapter-5.git"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "nodejs"
+  ],
+  "author": "Septian Maulana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/binar-bootcamp-fsw23/challenge-chapter-5/issues"
+  },
+  "homepage": "https://gitlab.com/binar-bootcamp-fsw23/challenge-chapter-5#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
