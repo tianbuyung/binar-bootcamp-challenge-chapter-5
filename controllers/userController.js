@@ -1,6 +1,5 @@
 // Import User Model
 const UserModel = require("../models/User");
-const createError = require("http-errors");
 
 // Initiate Menu Model
 const userModel = new UserModel();
@@ -8,22 +7,37 @@ const userModel = new UserModel();
 class UserController {
   constructor() {}
   getRegisterPage(req, res) {
-    res.render("pages/register", { title: "Sign up" });
+    res.render("pages/register", { title: "Sign up", message: true });
   }
   getLoginPage(req, res) {
-    res.render("pages/login", { title: "Sign in" });
+    res.render("pages/login", { title: "Sign in", message: true });
   }
   createNewUser(req, res) {
-    userModel.createNewUser(req.body);
-    res.redirect("/users/login");
+    let response = userModel.createNewUser(req.body);
+    console.log(response);
+    if (!response) {
+      res.redirect("/users/login");
+    } else {
+      res.render("pages/register", {
+        title: "Sign up",
+        message: response,
+        messageClass: "alert-danger",
+      });
+    }
   }
   loginUser(req, res, next) {
-    console.log(req.body);
     let response = userModel.checkDataUser(req.body);
     if (response.length > 0) {
-      res.redirect("/game");
+      res.render("pages/game", {
+        title: "Rock, Paper, Scissors Game",
+        gameStatus: true,
+      });
     } else {
-      next(createError(401));
+      res.render("pages/login", {
+        title: "Sign in",
+        message: "Invalid username or password",
+        messageClass: "alert-danger",
+      });
     }
   }
 }
