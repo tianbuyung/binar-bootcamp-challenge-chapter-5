@@ -4,6 +4,8 @@ class User {
     this.users = require("../database/users.json");
     this.PATH_USERS = "./database/users.json";
     this.fs = require("fs");
+    this.bcrypt = require("bcrypt");
+    this.saltRounds = 10;
   }
   // Encapsulation Database User
   #getDb() {
@@ -33,7 +35,7 @@ class User {
         const objToAdd = {
           id: userID,
           email: email,
-          password: password,
+          password: this.bcrypt.hashSync(password, this.saltRounds),
           status: true,
         };
         users.push(objToAdd);
@@ -51,7 +53,10 @@ class User {
     const { email, password } = payload;
     const users = this.#getUsers();
     let userFiltered = users.filter((user) => {
-      return user.email === email && user.password === password;
+      if (user.email === email) {
+        return this.bcrypt.compareSync(password, user.password);
+      }
+      return;
     });
     return userFiltered;
   }
