@@ -6,7 +6,7 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const gameRouter = require("./routes/game");
 const usersRouter = require("./routes/users");
-const usersApiRouter = require("./routes/api-users");
+const usersApiRouter = require("./routes/usersApi");
 
 // import middleware
 const clientError = require("./middleware/clientError");
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/game", gameRouter);
 app.use("/users", usersRouter);
-app.use("/api-users", usersApiRouter);
+app.use("/users/api", usersApiRouter);
 
 app.use(clientError.errorNotFound);
 app.use(serverError.server);
