@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/game", gameRouter);
 app.use("/users", usersRouter);
-app.use("/users/api", usersApiRouter);
+app.use("/api/users", usersApiRouter);
 
 app.use(clientError.errorNotFound);
 app.use(serverError.server);
