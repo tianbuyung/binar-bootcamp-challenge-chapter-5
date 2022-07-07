@@ -81,7 +81,10 @@ class User {
     );
     if (dataFiltered.length > 0) {
       dataFiltered[0].email = email;
-      dataFiltered[0].password = password;
+      dataFiltered[0].password = this.bcrypt.hashSync(
+        password,
+        this.saltRounds
+      );
       this.fs.writeFile(db, JSON.stringify(datas), (err) => {
         if (err) return err;
       });
